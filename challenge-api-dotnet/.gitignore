@@ -6,10 +6,9 @@
 # dotenv files
 .env
 
-# App config local (contém string de conexão real)
+# App config local
 appsettings.Development.json
 
-# Rider project settings (já incluso, mas só para reforçar)
 .idea/
 
 # User-specific files
