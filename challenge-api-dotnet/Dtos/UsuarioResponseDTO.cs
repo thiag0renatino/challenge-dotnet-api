@@ -6,5 +6,5 @@ public class UsuarioResponseDTO
     public string Email { get; set; }
     public string Nome { get; set; }
     public string Status { get; set; }
-    public int PatioId { get; set; }
+    public int? PatioId { get; set; }
 }
