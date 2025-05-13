@@ -37,7 +37,7 @@ public class UsuarioController : ControllerBase
     }
     
     [HttpGet("email/{email}")]
-    public async Task<ActionResult<UsuarioResponseDTO>> FindByEmail(string email)
+    public async Task<ActionResult<UsuarioResponseDTO>> GetdByEmail(string email)
     {
         var usuario = await _context.Usuarios
             .FirstOrDefaultAsync(u => u.Email == email);
@@ -61,11 +61,11 @@ public class UsuarioController : ControllerBase
     }
     
     [HttpPut("{id}")]
-    public async Task<ActionResult> update(int id, UsuarioCreateDTO dto)
+    public async Task<ActionResult> Update(int id, UsuarioCreateDTO dto)
     {
         if (id != dto.IdUsuario)
         {
-            return BadRequest("ID do corpo e URL devem ser iguais");
+            return BadRequest();
         }
         var usuario = await _context.Usuarios.FindAsync(id);
         if (usuario == null)

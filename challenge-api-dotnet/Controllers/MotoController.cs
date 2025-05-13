@@ -68,7 +68,7 @@ public class MotoController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<ActionResult<MotoCreateDTO>> Post(MotoCreateDTO dto)
+    public async Task<ActionResult<MotoCreateDTO>> Create(MotoCreateDTO dto)
     {
         var moto = MotoMapper.ToEntity(dto);
         moto.DataCadastro = DateTime.Now;
@@ -80,7 +80,7 @@ public class MotoController : ControllerBase
     }
 
     [HttpPut("{id}")]
-    public async Task<ActionResult<MotoCreateDTO>> Put(int id, MotoCreateDTO dto)
+    public async Task<ActionResult<MotoCreateDTO>> Update(int id, MotoCreateDTO dto)
     {
         if (id != dto.IdMoto)
         {
