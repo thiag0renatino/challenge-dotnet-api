@@ -14,12 +14,11 @@ public class MotoMapper
         DataCadastro = moto.DataCadastro
     };
 
-    public static Moto ToEntity(MotoDTO dto) => new Moto
+    public static Moto ToEntity(MotoCreateDTO dto) => new Moto
     {
         IdMoto = dto.IdMoto,
         Placa = dto.Placa,
         Modelo = dto.Modelo,
         Status = dto.Status,
-        DataCadastro = dto.DataCadastro
     };
 }
