@@ -56,12 +56,12 @@ public class PosicaoController :  ControllerBase
         return posicoes.Select(PosicaoMapper.ToDto).ToList();
     }
     
-    [HttpGet("motos-indisponiveis")]
-    public async Task<ActionResult<List<PosicaoDTO>>> GetPosicoesDeMotosIndisponiveis()
+    [HttpGet("motos-revisao")]
+    public async Task<ActionResult<List<PosicaoDTO>>> GetPosicoesDeMotosRevisao()
     {
         var posicoes = await _context.Posicoes
             .Include(p => p.MotoIdMotoNavigation)
-            .Where(p => p.MotoIdMotoNavigation != null && p.MotoIdMotoNavigation.Status.ToLower() == "indisponível")
+            .Where(p => p.MotoIdMotoNavigation != null && p.MotoIdMotoNavigation.Status.ToLower() == "revisão")
             .ToListAsync();
 
         return posicoes.Select(PosicaoMapper.ToDto).ToList();
